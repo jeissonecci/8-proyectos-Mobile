@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinTrack — Controla tus finanzas sin complicaciones</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <script src="bootstrap.bundle.min.js"></script>
+  <style>
+    :root {
+      --primary-600: #0ea5a4;
+      --primary-800: #0369a1;
+      --bg: #f7fbfc;
+      --card-shadow: 0 6px 20px rgba(3, 37, 65, 0.06);
+    }
+    body {
+      background: linear-gradient(180deg, #f7fbfc 0%, #ffffff 60%);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    .brand-gradient {
+      background: linear-gradient(90deg, var(--primary-600), var(--primary-800));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero { padding: 4rem 0; }
+    .feature-card { border: none; box-shadow: var(--card-shadow); border-radius: 14px; }
+    .app-mock { background: rgba(255,255,255,0.85); border-radius: 18px; padding: 1rem; box-shadow: var(--card-shadow); }
+    .nav-pills .nav-link.active { background: linear-gradient(90deg, var(--primary-600), var(--primary-800)); color: #fff; }
+    .small-muted { font-size: .85rem; color: #6b7280; }
+    footer { background: #fff; border-top: 1px solid #e5e7eb; }
+    @media (max-width: 576px) {
+      .hero { padding: 2rem 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <div class="rounded-circle d-flex align-items-center justify-content-center" 
+             style="width:40px;height:40px;background:linear-gradient(90deg,var(--primary-600),var(--primary-800));color:#fff;font-weight:700">FT</div>
+        <div>
+          <div>FinTrack</div>
+          <small class="text-muted">Controla tus finanzas</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#features">Características</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Planes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#admin-demo">Demo Panel</a></li>
+          <li class="nav-item ms-3"><a class="btn btn-outline-primary" href="login.html">Iniciar sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="landing" class="hero mt-5 pt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold">Domina tus finanzas sin complicaciones</h1>
+          <p class="lead text-muted">
+            FinTrack te ayuda a registrar gastos, fijar metas de ahorro y entender a dónde va tu dinero — 
+            con una app sencilla y un panel administrativo para visualizar tus reportes.
+          </p>
+
+          <div class="d-flex gap-2 mt-4">
+            <a class="btn btn-lg btn-primary" href="login.html" role="button">Empieza ahora</a>
+            <a class="btn btn-lg btn-outline-secondary" href="dashboard.html" role="button">Ver Demo</a>
+          </div>
+
+          <div class="row mt-4 g-2">
+            <div class="col-6">
+              <div class="p-3 feature-card">
+                <strong>$850.000</strong>
+                <div class="small-muted">Saldo actual (ejemplo)</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-3 feature-card">
+                <strong>2 metas activas</strong>
+                <div class="small-muted">Viaje Cartagena · Apartamento</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 text-center mt-4 mt-lg-0">
+          <div class="app-mock mx-auto" style="max-width:360px">
+            <div class="border rounded-3" style="overflow:hidden;background:linear-gradient(180deg,#ffffff,#f1fcfb);">
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <strong>Hola, Laura</strong>
+                  <small class="small-muted">Saldo</small>
+                </div>
+                <div class="bg-white p-3 rounded-2 shadow-sm mb-3">
+                  <div class="d-flex justify-content-between">
+                    <div class="small-muted">Saldo actual</div>
+                    <div class="h5">$850.000</div>
+                  </div>
+                  <div class="progress mt-2" style="height:8px">
+                    <div class="progress-bar" style="width:25%"></div>
+                  </div>
+                </div>
+                <div class="list-group mb-2">
+                  <div class="list-group-item d-flex justify-content-between">Salida amigos <span class="text-danger">-$200.000</span></div>
+                  <div class="list-group-item d-flex justify-content-between">Pago nómina <span class="text-success">+$3.000.000</span></div>
+                </div>
+                <div class="d-flex gap-2">
+                  <a class="btn btn-outline-primary btn-sm flex-fill" href="dashboard.html">Registrar</a>
+                  <a class="btn btn-primary btn-sm flex-fill" href="dashboard.html">Metas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <small class="d-block mt-3 small-muted">Vista simulada de la app móvil</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5">
+          <h3>Características principales</h3>
+          <p class="text-muted">Registra movimientos, define metas, analiza reportes y mantén el control de tus finanzas.</p>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><strong>Registro rápido</strong> — Guarda ingresos y gastos en segundos.</li>
+            <li class="mb-2"><strong>Metas visuales</strong> — Barra de progreso y recordatorios automáticos.</li>
+            <li class="mb-2"><strong>Reportes exportables</strong> — Descarga tus movimientos en CSV o PDF.</li>
+          </ul>
+          <a href="dashboard.html" class="btn btn-outline-primary">Ver Panel Demo</a>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-md-6"><div class="p-3 feature-card"><h5>Resumen mensual</h5><p class="small-muted">Gráficos de gastos e ingresos.</p></div></div>
+            <div class="col-md-6"><div class="p-3 feature-card"><h5>Sincronización</h5><p class="small-muted">Datos consistentes entre web y móvil.</p></div></div>
+            <div class="col-md-6"><div class="p-3 feature-card"><h5>Configuración</h5><p class="small-muted">Moneda, idioma y notificaciones.</p></div></div>
+            <div class="col-md-6"><div class="p-3 feature-card"><h5>Seguridad</h5><p class="small-muted">Acceso con autenticación segura.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-5 bg-white">
+    <div class="container text-center">
+      <h3>Planes</h3>
+      <p class="text-muted">Prueba gratis y accede a más funciones según tus necesidades.</p>
+      <div class="row mt-4 g-3">
+        <div class="col-md-4">
+          <div class="p-4 rounded-3 shadow-sm">
+            <h5>Básico</h5>
+            <p class="small-muted">Gratis — para uso personal</p>
+            <ul class="small-muted list-unstyled">
+              <li>Registro de movimientos</li>
+              <li>2 metas activas</li>
+            </ul>
+            <a href="login.html" class="btn btn-outline-primary">Empieza gratis</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 rounded-3 shadow-sm border border-1">
+            <h5>Pro</h5>
+            <p class="small-muted">Funciones avanzadas</p>
+            <ul class="small-muted list-unstyled">
+              <li>Reportes exportables</li>
+              <li>Soporte prioritario</li>
+            </ul>
+            <a href="dashboard.html" class="btn btn-primary">Probar demo</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 rounded-3 shadow-sm">
+            <h5>Empresa</h5>
+            <p class="small-muted">Para equipos y admins</p>
+            <ul class="small-muted list-unstyled">
+              <li>Gestión de usuarios</li>
+              <li>Integraciones avanzadas</li>
+            </ul>
+            <a href="dashboard.html" class="btn btn-outline-primary">Ver panel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Demo -->
+  <section id="admin-demo" class="py-5 bg-light">
+    <div class="container text-center">
+      <h3 class="fw-bold mb-3">Demo del Panel Administrativo</h3>
+      <p class="text-muted mb-4">Explora un ejemplo del dashboard con datos ficticios.</p>
+      <a href="dashboard.html" class="btn btn-lg btn-primary">Abrir Demo</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 mt-4">
+    <div class="container d-flex justify-content-between flex-wrap">
+      <div><strong>FinTrack</strong> <small class="text-muted">— Proyecto académico 2025</small></div>
+      <div class="text-muted small">Hecho con ♥ · Diseño Fintech</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

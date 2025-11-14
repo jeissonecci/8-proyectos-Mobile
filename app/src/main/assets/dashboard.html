@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinTrack — Dashboard</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --primary-600: #0ea5a4;
+      --primary-800: #0369a1;
+      --bg: #f7fbfc;
+    }
+
+    body {
+      background-color: var(--bg);
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Sidebar (desktop) */
+    .sidebar {
+      background: #fff;
+      border-right: 1px solid #e5e7eb;
+      min-height: 100vh;
+      padding-top: 2rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .sidebar a.nav-link {
+      color: #374151;
+      margin: .2rem 0;
+      transition: background 0.3s ease;
+    }
+
+    .sidebar a.nav-link.active,
+    .sidebar a.nav-link:hover {
+      background: linear-gradient(90deg, var(--primary-600), var(--primary-800));
+      color: #fff !important;
+      border-radius: 6px;
+    }
+
+    /* Cards */
+    .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .sidebar {
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 1rem;
+      }
+
+      .sidebar .text-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+      }
+
+      .sidebar img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .sidebar nav.nav {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .sidebar a.nav-link {
+        margin: 0;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      .content {
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .card h4, .card h5 { font-size: 1rem; }
+      .card p, .card small { font-size: 0.85rem; }
+      .table th, .table td { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <aside class="col-lg-3 sidebar">
+        <div class="text-center mb-4">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" width="70" class="rounded-circle mb-2">
+          <div>
+            <h6 class="fw-semibold mb-0">Laura Gómez</h6>
+            <small class="text-muted d-block">laura.gomez@email.com</small>
+            <button onclick="goHome()" class="btn btn-sm btn-outline-danger mt-2">Cerrar sesión</button>
+          </div>
+        </div>
+        <nav class="nav flex-column text-center">
+          <a class="nav-link active" href="#">🏠 Resumen</a>
+          <a class="nav-link" href="#">➕ Registrar gasto</a>
+          <a class="nav-link" href="#">🎯 Metas</a>
+          <a class="nav-link" href="#">📊 Reportes</a>
+        </nav>
+      </aside>
+
+      <!-- Contenido principal -->
+      <main class="col-lg-9 content">
+        <div class="mb-4">
+          <h3 class="fw-bold">Resumen financiero</h3>
+          <p class="text-muted">Tus gastos e ingresos del mes actual</p>
+        </div>
+
+        <!-- Resumen -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-4 col-sm-6">
+            <div class="card p-3">
+              <div class="small text-muted">Saldo actual</div>
+              <h4 class="fw-bold text-success">$1,250,000</h4>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="card p-3">
+              <div class="small text-muted">Ingresos del mes</div>
+              <h4 class="fw-bold text-primary">$3,200,000</h4>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="card p-3">
+              <div class="small text-muted">Gastos del mes</div>
+              <h4 class="fw-bold text-danger">$1,950,000</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Últimos movimientos -->
+        <div class="card p-3 mb-4">
+          <h5 class="fw-semibold mb-3">Últimos movimientos</h5>
+          <div class="table-responsive">
+            <table class="table table-borderless align-middle">
+              <thead>
+                <tr><th>Fecha</th><th>Categoría</th><th>Descripción</th><th class="text-end">Monto</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>28 Oct</td><td>Transporte</td><td>Taxi al trabajo</td><td class="text-danger text-end">-$15,000</td></tr>
+                <tr><td>27 Oct</td><td>Alimentación</td><td>Compra supermercado</td><td class="text-danger text-end">-$180,000</td></tr>
+                <tr><td>25 Oct</td><td>Ocio</td><td>Salida con amigos</td><td class="text-danger text-end">-$120,000</td></tr>
+                <tr><td>20 Oct</td><td>Ingresos</td><td>Pago nómina</td><td class="text-success text-end">+$3,000,000</td></tr>
+                <tr><td>17 Oct</td><td>Vivienda</td><td>Arriendo mensual</td><td class="text-danger text-end">-$900,000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Gráficos -->
+        <div class="row g-3">
+          <div class="col-lg-6 col-md-12">
+            <div class="card p-3">
+              <h6 class="fw-semibold mb-3">Distribución de gastos</h6>
+              <canvas id="doughnutChart" style="height:260px"></canvas>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="card p-3">
+              <h6 class="fw-semibold mb-3">Evolución mensual</h6>
+              <canvas id="lineChart" style="height:260px"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metas -->
+        <div class="card p-3 mt-4">
+          <h5 class="fw-semibold mb-3">Metas de ahorro</h5>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between"><span>Viaje Cartagena</span><small>40% completado</small></div>
+            <div class="progress" style="height:8px"><div class="progress-bar bg-success" style="width:40%"></div></div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between"><span>Fondo de emergencia</span><small>60% completado</small></div>
+            <div class="progress" style="height:8px"><div class="progress-bar bg-info" style="width:60%"></div></div>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between"><span>Apartamento</span><small>15% completado</small></div>
+            <div class="progress" style="height:8px"><div class="progress-bar bg-warning" style="width:15%"></div></div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Botón "Cerrar sesión"
+    function goHome() {
+      window.location.href = "index.html";
+    }
+
+    // 📊 Chart.js - datos demo
+    const doughCtx = document.getElementById("doughnutChart");
+    new Chart(doughCtx, {
+      type: "doughnut",
+      data: {
+        labels: ["Alimentación", "Transporte", "Vivienda", "Ocio", "Servicios", "Salud"],
+        datasets: [{
+          data: [28, 10, 45, 8, 6, 3],
+          backgroundColor: ["#0369a1", "#0ea5a4", "#60a5fa", "#c084fc", "#fbbf24", "#ef4444"],
+          hoverOffset: 6
+        }]
+      },
+      options: { plugins: { legend: { position: "bottom" } } }
+    });
+
+    const lineCtx = document.getElementById("lineChart");
+    new Chart(lineCtx, {
+      type: "line",
+      data: {
+        labels: ["May", "Jun", "Jul", "Ago", "Sep", "Oct"],
+        datasets: [
+          {
+            label: "Ingresos",
+            data: [2900, 3100, 3200, 3000, 3100, 3200],
+            borderColor: "#0369a1",
+            backgroundColor: "rgba(3,105,161,0.1)",
+            fill: true,
+            tension: 0.4
+          },
+          {
+            label: "Gastos",
+            data: [1800, 1900, 2100, 2000, 1900, 1950],
+            borderColor: "#0ea5a4",
+            backgroundColor: "rgba(14,165,164,0.1)",
+            fill: true,
+            tension: 0.4
+          }
+        ]
+      },
+      options: {
+        plugins: { legend: { position: "bottom" } },
+        scales: { y: { beginAtZero: false } }
+      }
+    });
+  </script>
+</body>
+</html>
